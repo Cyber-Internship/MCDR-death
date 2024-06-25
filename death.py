@@ -1,7 +1,6 @@
 # coding=utf-8
 import re
 
-import minecraft_data_api as api
 from mcdreforged.api.command import Literal
 from mcdreforged.api.all import new_thread
 from mcdreforged.api.rtext import RText, RTextList, RAction, RColor
@@ -43,6 +42,8 @@ tp_tran = {
 
 @new_thread(PLUGIN_METADATA['id'])
 def on_death(server, death_message: str):
+    import minecraft_data_api as api
+
     player = death_message.split( )[0]
 
     # irony
